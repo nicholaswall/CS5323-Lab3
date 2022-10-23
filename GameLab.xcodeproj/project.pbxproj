@@ -13,6 +13,9 @@
 		FA9BE43629007D0300CCF605 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9BE43429007D0300CCF605 /* Main.storyboard */; };
 		FA9BE43829007D0500CCF605 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA9BE43729007D0500CCF605 /* Assets.xcassets */; };
 		FA9BE43B29007D0500CCF605 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9BE43929007D0500CCF605 /* LaunchScreen.storyboard */; };
+		FAA1D8AB29008200000FCF9A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA1D8AA29008200000FCF9A /* GameViewController.swift */; };
+		FAA1D8AE29009D5A000FCF9A /* GradientProgressBar in Frameworks */ = {isa = PBXBuildFile; productRef = FAA1D8AD29009D5A000FCF9A /* GradientProgressBar */; };
+		FAA1D8B12900A7FF000FCF9A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA1D8B02900A7FF000FCF9A /* GameScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		FA9BE43729007D0500CCF605 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA9BE43A29007D0500CCF605 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA9BE43C29007D0500CCF605 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAA1D8AA29008200000FCF9A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		FAA1D8AF2900A4DA000FCF9A /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
+		FAA1D8B02900A7FF000FCF9A /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAA1D8AE29009D5A000FCF9A /* GradientProgressBar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +66,10 @@
 				FA9BE42E29007D0300CCF605 /* AppDelegate.swift */,
 				FA9BE43029007D0300CCF605 /* SceneDelegate.swift */,
 				FA9BE43229007D0300CCF605 /* ViewController.swift */,
+				FAA1D8AF2900A4DA000FCF9A /* TODO.md */,
 				FA9BE43429007D0300CCF605 /* Main.storyboard */,
+				FAA1D8AA29008200000FCF9A /* GameViewController.swift */,
+				FAA1D8B02900A7FF000FCF9A /* GameScene.swift */,
 				FA9BE43729007D0500CCF605 /* Assets.xcassets */,
 				FA9BE43929007D0500CCF605 /* LaunchScreen.storyboard */,
 				FA9BE43C29007D0500CCF605 /* Info.plist */,
@@ -83,6 +93,9 @@
 			dependencies = (
 			);
 			name = GameLab;
+			packageProductDependencies = (
+				FAA1D8AD29009D5A000FCF9A /* GradientProgressBar */,
+			);
 			productName = GameLab;
 			productReference = FA9BE42B29007D0300CCF605 /* GameLab.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +124,9 @@
 				Base,
 			);
 			mainGroup = FA9BE42229007D0300CCF605;
+			packageReferences = (
+				FAA1D8AC29009D5A000FCF9A /* XCRemoteSwiftPackageReference "GradientProgressBar" */,
+			);
 			productRefGroup = FA9BE42C29007D0300CCF605 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,6 +154,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAA1D8B12900A7FF000FCF9A /* GameScene.swift in Sources */,
+				FAA1D8AB29008200000FCF9A /* GameViewController.swift in Sources */,
 				FA9BE43329007D0300CCF605 /* ViewController.swift in Sources */,
 				FA9BE42F29007D0300CCF605 /* AppDelegate.swift in Sources */,
 				FA9BE43129007D0300CCF605 /* SceneDelegate.swift in Sources */,
@@ -290,11 +308,11 @@
 				DEVELOPMENT_TEAM = 89QP597GBF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GameLab/Info.plist;
+				INFOPLIST_KEY_NSMotionUsageDescription = "We need motion!";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -318,11 +336,11 @@
 				DEVELOPMENT_TEAM = 89QP597GBF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GameLab/Info.plist;
+				INFOPLIST_KEY_NSMotionUsageDescription = "We need motion!";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -358,6 +376,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FAA1D8AC29009D5A000FCF9A /* XCRemoteSwiftPackageReference "GradientProgressBar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fxm90/GradientProgressBar";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FAA1D8AD29009D5A000FCF9A /* GradientProgressBar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAA1D8AC29009D5A000FCF9A /* XCRemoteSwiftPackageReference "GradientProgressBar" */;
+			productName = GradientProgressBar;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FA9BE42329007D0300CCF605 /* Project object */;
 }

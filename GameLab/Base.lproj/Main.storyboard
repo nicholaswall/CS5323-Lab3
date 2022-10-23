@@ -1,24 +1,154 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainVC" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="GameLab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eOe-tW-ol0">
+                                <rect key="frame" x="131" y="111" width="247" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step Goal:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yP-GR-J7l">
+                                <rect key="frame" x="30" y="118" width="79" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kO3-uK-zmM">
+                                <rect key="frame" x="20" y="163" width="358" height="34.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Save Step Goal"/>
+                                <connections>
+                                    <action selector="saveStepGoalButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Opx-Ww-gdM"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Steps Taken Today: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csQ-0R-k2h">
+                                <rect key="frame" x="30" y="206" width="364" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps Taken Yesterday: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHq-qw-Skm">
+                                <rect key="frame" x="-11" y="651" width="434" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps Remaining Today: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYt-jO-2Ca">
+                                <rect key="frame" x="30" y="234" width="364" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Activity: Unknown" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mT7-kC-sdJ">
+                                <rect key="frame" x="0.0" y="701" width="414" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pPw-9v-7J3" customClass="GradientProgressBar" customModule="GradientProgressBar">
+                                <rect key="frame" x="92" y="302" width="240" height="157"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="progress">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRY-pg-NVW">
+                                <rect key="frame" x="30" y="743" width="348" height="34.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Play the Game!"/>
+                                <connections>
+                                    <action selector="navigateToGameButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gcg-pT-d5R"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dHq-qw-Skm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="-11" id="377-o5-2Dd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oYt-jO-2Ca" secondAttribute="trailing" constant="20" id="3uO-XA-Onf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dHq-qw-Skm" secondAttribute="trailing" constant="-9" id="7Ke-Y8-FYV"/>
+                            <constraint firstItem="JRY-pg-NVW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="8SZ-HK-5Re"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pPw-9v-7J3" secondAttribute="trailing" constant="82" id="EQr-in-AcV"/>
+                            <constraint firstItem="oYt-jO-2Ca" firstAttribute="top" secondItem="csQ-0R-k2h" secondAttribute="bottom" constant="7.5" id="G6u-Zu-gbw"/>
+                            <constraint firstItem="1yP-GR-J7l" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="GDe-1H-jP6"/>
+                            <constraint firstItem="eOe-tW-ol0" firstAttribute="leading" secondItem="1yP-GR-J7l" secondAttribute="trailing" constant="22" id="GHW-Ld-bma"/>
+                            <constraint firstItem="kO3-uK-zmM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="HK3-2x-lZO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pPw-9v-7J3" secondAttribute="bottom" constant="403" id="HnY-oB-kAF"/>
+                            <constraint firstItem="dHq-qw-Skm" firstAttribute="top" secondItem="pPw-9v-7J3" secondAttribute="bottom" constant="192" id="TBA-bH-hd1"/>
+                            <constraint firstItem="JRY-pg-NVW" firstAttribute="top" secondItem="mT7-kC-sdJ" secondAttribute="bottom" constant="21" id="Wlt-KA-PpV"/>
+                            <constraint firstItem="oYt-jO-2Ca" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="XwI-Hr-Urw"/>
+                            <constraint firstItem="kO3-uK-zmM" firstAttribute="top" secondItem="eOe-tW-ol0" secondAttribute="bottom" constant="18" id="Z9K-n7-7be"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="csQ-0R-k2h" secondAttribute="trailing" constant="87" id="c3i-q0-mVM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eOe-tW-ol0" secondAttribute="trailing" constant="36" id="cZw-09-02O"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mT7-kC-sdJ" secondAttribute="trailing" id="emF-1H-HLi"/>
+                            <constraint firstItem="pPw-9v-7J3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="92" id="g2J-Ul-Iod"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JRY-pg-NVW" secondAttribute="trailing" constant="36" id="hQz-cN-ndQ"/>
+                            <constraint firstItem="eOe-tW-ol0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="63" id="iTv-eB-xQf"/>
+                            <constraint firstItem="1yP-GR-J7l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="o52-wQ-DG7"/>
+                            <constraint firstItem="mT7-kC-sdJ" firstAttribute="top" secondItem="dHq-qw-Skm" secondAttribute="bottom" constant="29" id="oV3-uk-2rv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kO3-uK-zmM" secondAttribute="trailing" constant="36" id="uyb-01-HIC"/>
+                            <constraint firstItem="csQ-0R-k2h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="v18-ZT-E4o"/>
+                            <constraint firstItem="pPw-9v-7J3" firstAttribute="top" secondItem="kO3-uK-zmM" secondAttribute="bottom" constant="104.5" id="xZd-nC-hdK"/>
+                            <constraint firstItem="mT7-kC-sdJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yZy-cX-mhl"/>
+                            <constraint firstItem="csQ-0R-k2h" firstAttribute="top" secondItem="kO3-uK-zmM" secondAttribute="bottom" constant="8" symbolic="YES" id="zIX-2E-mBz"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="X7U-4O-i82"/>
+                    <connections>
+                        <outlet property="currentActivityLabel" destination="mT7-kC-sdJ" id="JDl-Ly-aN8"/>
+                        <outlet property="navigateToGameButton" destination="JRY-pg-NVW" id="NEa-UG-dOU"/>
+                        <outlet property="stepGoalInput" destination="eOe-tW-ol0" id="VJo-lN-aJN"/>
+                        <outlet property="stepProgressBar" destination="pPw-9v-7J3" id="lKp-Se-Kyh"/>
+                        <outlet property="stepsRemainingLabel" destination="oYt-jO-2Ca" id="FB5-M4-xB9"/>
+                        <outlet property="stepsTakenLabel" destination="csQ-0R-k2h" id="yDX-xO-gmo"/>
+                        <outlet property="stepsYesterdayLabel" destination="dHq-qw-Skm" id="FfN-jY-kbF"/>
+                        <segue destination="4ec-8H-YvL" kind="show" identifier="goToGame" id="sA7-xy-2lz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="77.678571428571431"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="8Rm-uT-jbW">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="4ec-8H-YvL" customClass="GameViewController" customModule="GameLab" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yjf-Pb-BVK" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ZTD-km-1y2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="RYT-f7-uz4"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="backToHome" id="dKw-ft-kfe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lMT-fe-oH3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1003" y="78"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
